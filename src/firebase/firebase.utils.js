@@ -1,0 +1,25 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+
+const config = {
+    apiKey: "AIzaSyAuG3cnz9UNaK_-PLpl6xBSQ3ZI6QKe9bk",
+    authDomain: "e-shop-db-5a05e.firebaseapp.com",
+    databaseURL: "https://e-shop-db-5a05e.firebaseio.com",
+    projectId: "e-shop-db-5a05e",
+    storageBucket: "e-shop-db-5a05e.appspot.com",
+    messagingSenderId: "16631494295",
+    appId: "1:16631494295:web:98924c3780e5d4edc05bd2",
+    measurementId: "G-MGREBKL0ZB"
+};
+
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+export default firebase;
