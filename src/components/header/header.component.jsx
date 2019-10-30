@@ -19,10 +19,10 @@ const Header = ({ currentUser, hidden }) => (
             <Logo className='logo'/>
         </Link>
         <div className='options'>
-            <Link className='option' to='/shop'>
+            <Link className='option' to={process.env.PUBLIC_URL + '/shop'}>
                 SHOP
             </Link>
-            <Link className='option' to='/contact'>
+            <Link className='option' to={process.env.PUBLIC_URL + '/contact'}>
                 CONTACT
             </Link>
             {
@@ -31,7 +31,7 @@ const Header = ({ currentUser, hidden }) => (
                 SIGN OUT
                 </div>
                 ) : (
-                <Link className='option' to='/signin'>
+                <Link className='option' to={process.env.PUBLIC_URL + '/signin'}>
                     SIGN IN
                 </Link>
             )}
