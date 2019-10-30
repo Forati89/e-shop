@@ -60,7 +60,7 @@ class App extends React.Component{
           path={process.env.PUBLIC_URL + '/signIn'}
           render={()=>
             this.props.currentUser ? (
-            <Redirect to='/' />
+            <Redirect to={process.env.PUBLIC_URL + '/'} />
             ) : (
             <SignInAndSignUp />
             )
