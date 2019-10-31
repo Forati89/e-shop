@@ -53,20 +53,20 @@ class App extends React.Component{
       <div>
       <Header />
       <Switch>
-       <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
-       <Route path={process.env.PUBLIC_URL + '/shop'} component={ShopPage} />
+       <Route exact path='/' component={HomePage} />
+       <Route path='/shop' component={ShopPage} />
        <Route 
           exact
-          path={process.env.PUBLIC_URL + '/signIn'}
+          path='/signIn'
           render={()=>
             this.props.currentUser ? (
-            <Redirect to={process.env.PUBLIC_URL + '/'} />
+            <Redirect to='/' />
             ) : (
             <SignInAndSignUp />
             )
           }
       />
-      <Route exact path={process.env.PUBLIC_URL + '/checkout'} component={CheckoutPage} />
+      <Route exact path='/checkout' component={CheckoutPage} />
       </Switch>
       </div>
     );
